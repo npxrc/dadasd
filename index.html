@@ -18,7 +18,7 @@
 				document.getElementById('legislativebranchbutton').classList.add('active')
 				document.getElementById('logomaintext').innerHTML = 'Legislative'
 				document.getElementById('mainposttitle').innerHTML = 'Legislative Branch'
-				document.getElementById('mainposttextcontent').innerHTML = '<h3>What is it?</h3>The Legislative branch is responsible for proposing and passing bills, laws, and amendments to the Constitution. The Legislative Branch is made up of the House of Representatives, and the Senate. The House has 435 Members, and the Senate has 100 members, with 2 from each state.<h3>Why 435 Representatives?</h3> The reason there are 435 members in the house of representatives is because of the population. The more people in the US, the more Representatives. Each representative will serve a 2 year term, but each Senator will serve 6 year terms. And they don\'t have term limits, meaning that they can serve <b>forever</b>, as long as they\'re voted into power.'
+				document.getElementById('mainposttextcontent').innerHTML = '<h3>What is it?</h3>The Legislative branch is responsible for proposing and passing bills, laws, and amendments to the Constitution. The Legislative Branch is made up of the House of Representatives, and the Senate. The House has 435 Members, and the Senate has 100 members, with 2 from each state.<h3>Why 435 Representatives?</h3> The reason there are 435 members in the house of representatives is because of the population. The more people in the US, the more Representatives. Each representative will serve a 2 year term, but each Senator will serve 6 year terms. And they don\'t have term limits, meaning that they can serve <b>forever</b>, as long as they\'re voted into power. <h3>Kansas</h3>As mentioned before, there are only 2 Senators from each state. The two Senators from Kansas are Jerry Moran, and Roger Marshall.'
 				document.title = 'Legislative Branch'
 				localStorage.setItem('page','legislative')
 			}
@@ -27,7 +27,7 @@
 				document.getElementById('executivebranchbutton').classList.add('active')
 				document.getElementById('logomaintext').innerHTML = 'Executive'
 				document.getElementById('mainposttitle').innerHTML = 'Executive Branch'
-				document.getElementById('mainposttextcontent').innerHTML = '<h3>What is it?</h3>The Executive branch is responsible for enforcing passed bills and laws. The Executive branch is made up of the President, the Vice President, and the President\'s Cabinet. <h3>How Do I Become President?</h3>In order to become the President, you must be a born Citizen of the United States, <b>at <i>least</i> 35 years old</b>, and must have been a resident of the United States for 14 years. Presidents can serve for 4 year terms, and with a limit of 2 terms.<h4>Impeachment</h4>A president may be impeached, or kicked from office, if someone holds an investigation against <code>public misconduct</code><h3>What is the Cabinet?</h3>The Cabinet is a group of people selected by the President to advise the President in many subjects.'
+				document.getElementById('mainposttextcontent').innerHTML = '<h3>What is it?</h3>The Executive branch is responsible for enforcing passed bills and laws. The Executive branch is made up of the President, the Vice President, and the President\'s Cabinet. <h3>How Do I Become President?</h3>In order to become the President, you must be a born Citizen of the United States, <b>at <i>least</i> 35 years old</b>, and must have been a resident of the United States for 14 years. Presidents can serve for 4 year terms, and with a limit of 2 terms.<h4>Impeachment</h4>A president may be impeached, or kicked from office, if someone holds a public investigation against <code>misconduct</code><h3>What is the Cabinet?</h3>The Cabinet is a group of people selected by the President to advise the President in many subjects.'
 				document.title = 'Executive Branch'
 				localStorage.setItem('page','executive')
 			}
@@ -36,7 +36,7 @@
 				document.getElementById('judicialbranchbutton').classList.add('active')
 				document.getElementById('logomaintext').innerHTML = 'Judicial'
 				document.getElementById('mainposttitle').innerHTML = 'Judicial Branch'
-				document.getElementById('mainposttextcontent').innerHTML = '<h3>What is it?</h3>The Judicial Branch is responsible for interpreting the laws, and running national courts. This branch also includes Supreme Court Justices.<h3>What are Supreme Court Justices?</h3>The Supreme Court is made up of 9 Justices, who make decisions based on court cases, and the Constitution. These people are appointed by the President and serve for life, or until they wish to retire.'
+				document.getElementById('mainposttextcontent').innerHTML = '<h3>What is it?</h3>The Judicial Branch is responsible for deciding if laws follow the outlines of the constitution and the limits of the goverment, and running national courts. This branch also includes Supreme Court Justices.<h3>Who are Supreme Court Justices?</h3>The Supreme Court is made up of 9 Justices, who make decisions based on court cases, and the Constitution. Their decisions are final, meaning that they can\'t be overturned. These people are appointed by the President and serve for life, or until they wish to retire.'
 				document.title = 'Judicial Branch'
 				localStorage.setItem('page','judicial')
 			}
@@ -61,15 +61,7 @@
 				}
 			}
 			setTimeout(()=>{
-				if (localStorage.getItem('page')=='legislative'||localStorage.getItem('page')=='executive'||localStorage.getItem('page')=='judicial'){
-					let lstor = localStorage.getItem('page')
-					if (lstor='legislative'){legislative()}
-					else if (lstor='executive'){executive()}
-					else if (lstor='judicial'){judicial()}
-				}else{
-					localStorage.setItem('page','legislative')
-				}
-			document.getElementById('mainposttextcontent').innerHTML = '<h3>What is it?</h3>The Legislative branch is responsible for proposing and passing bills, laws, and amendments to the Constitution. The Legislative Branch is made up of the House of Representatives, and the Senate. The House has 435 Members, and the Senate has 100 members, with 2 from each state.<h3>Why 435 Representatives?</h3> The reason there are 435 members in the house of representatives is because of the population. The more people in the US, the more Representatives. Each representative will serve a 2 year term, but each Senator will serve 6 year terms. And they don\'t have term limits, meaning that they can serve <b>forever</b>, as long as they\'re voted into power.'
+				document.getElementById('mainposttextcontent').innerHTML = '<h3>What is it?</h3>The Legislative branch is responsible for proposing and passing bills, laws, and amendments to the Constitution. The Legislative Branch is made up of the House of Representatives, and the Senate. The House has 435 Members, and the Senate has 100 members, with 2 from each state.<h3>Why 435 Representatives?</h3> The reason there are 435 members in the house of representatives is because of the population. The more people in the US, the more Representatives. Each representative will serve a 2 year term, but each Senator will serve 6 year terms. And they don\'t have term limits, meaning that they can serve <b>forever</b>, as long as they\'re voted into power.<h3>Kansas</h3>As mentioned before, there are only 2 Senators from each state. The two Senators from Kansas are Jerry Moran, and Roger Marshall.'
 			},100)
 		</script>
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
@@ -82,7 +74,7 @@
 						<h1>The Branches<br />
 						of Government</h1>
 						<p>The three branches of government, in a website by Neil, Nathan, and Eli.<br/>
-						We'll share everything there is to know about the three branches of government</p>
+						We'll share what you need to know about the three branches of government</p>
 						<ul class="actions">
 							<li><a href="#header" class="button icon solid solo fa-arrow-down scrolly">Continue</a></li>
 						</ul>
