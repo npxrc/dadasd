@@ -1,0 +1,130 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title></title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+		<link rel="stylesheet" href="assets/css/main.css"/>
+		<script>
+			function replaceClasses(){
+				document.getElementById('executivebranchbutton').classList.remove('active')
+				document.getElementById('legislativebranchbutton').classList.remove('active')
+				document.getElementById('judicialbranchbutton').classList.remove('active')
+				document.getElementById('mainposttextcontent').innerHTML = ''
+				console.log('Replaced Classes')
+			}
+			function legislative(){
+				replaceClasses()
+				document.getElementById('legislativebranchbutton').classList.add('active')
+				document.getElementById('logomaintext').innerHTML = 'Legislative'
+				document.getElementById('mainposttitle').innerHTML = 'Legislative Branch'
+				document.getElementById('mainposttextcontent').innerHTML = '<h3>What is it?</h3>The Legislative branch is responsible for proposing and passing bills, laws, and amendments to the Constitution. The Legislative Branch is made up of the House of Representatives, and the Senate. The House has 435 Members, and the Senate has 100 members, with 2 from each state.<h3>Why 435 Representatives?</h3> The reason there are 435 members in the house of representatives is because of the population. The more people in the US, the more Representatives. Each representative will serve a 2 year term, but each Senator will serve 6 year terms. And they don\'t have term limits, meaning that they can serve <b>forever</b>, as long as they\'re voted into power.'
+				document.title = 'Legislative Branch'
+				localStorage.setItem('page','legislative')
+			}
+			function executive(){
+				replaceClasses()
+				document.getElementById('executivebranchbutton').classList.add('active')
+				document.getElementById('logomaintext').innerHTML = 'Executive'
+				document.getElementById('mainposttitle').innerHTML = 'Executive Branch'
+				document.getElementById('mainposttextcontent').innerHTML = '<h3>What is it?</h3>The Executive branch is responsible for enforcing passed bills and laws. The Executive branch is made up of the President, the Vice President, and the President\'s Cabinet. <h3>How Do I Become President?</h3>In order to become the President, you must be a born Citizen of the United States, <b>at <i>least</i> 35 years old</b>, and must have been a resident of the United States for 14 years. Presidents can serve for 4 year terms, and with a limit of 2 terms.<h3>What is the Cabinet?</h3>The Cabinet is a group of people selected by the President to advise the President in many subjects.'
+				document.title = 'Executive Branch'
+				localStorage.setItem('page','executive')
+			}
+			function judicial(){
+				replaceClasses()
+				document.getElementById('judicialbranchbutton').classList.add('active')
+				document.getElementById('logomaintext').innerHTML = 'Judicial'
+				document.getElementById('mainposttitle').innerHTML = 'Judicial Branch'
+				document.getElementById('mainposttextcontent').innerHTML = '<h3>What is it?</h3>The Judicial Branch is responsible for interpreting the laws, and running national courts. This branch also includes Supreme Court Justices.<h3>What are the Supreme Court Justices?</h3>The Supreme Court is made up of 9 Justices, who make decisions based on court cases, and the Constitution.'
+				document.title = 'Judicial Branch'
+				localStorage.setItem('page','judicial')
+			}
+			function previousArticle(){
+				if(document.getElementById('mainposttitle').innerHTML = 'Judicial Branch'){
+					legislative()
+				} else if(document.getElementById('mainposttitle').innerHTML = 'Legislative Branch'){
+					executive()
+				}
+				else if(document.getElementById('mainposttitle').innerHTML = 'Executive Branch'){
+					judicial()
+				}
+			}
+			function nextArticle(){
+				if(document.getElementById('mainposttitle').innerHTML = 'Judicial Branch'){
+					executive()
+				} else if(document.getElementById('mainposttitle').innerHTML = 'Legislative Branch'){
+					judicial()
+				}
+				else if(document.getElementById('mainposttitle').innerHTML = 'Executive Branch'){
+					legislative()
+				}
+			}
+			setTimeout(()=>{
+				document.title = 'Legislative Branch'
+				if (localStorage){
+					let lstor = localStorage.getItem('page')
+					if (lstor='legislative'){legislative()}
+					else if (lstor='executive'){executive()}
+					else if (lstor='judicial'){judicial()}
+				}else{
+					localStorage.setItem('page','legislative')
+				}
+			document.getElementById('mainposttextcontent').innerHTML = '<h3>What is it?</h3>The Legislative branch is responsible for proposing and passing bills, laws, and amendments to the Constitution. The Legislative Branch is made up of the House of Representatives, and the Senate. The House has 435 Members, and the Senate has 100 members, with 2 from each state.<h3>Why 435 Representatives?</h3> The reason there are 435 members in the house of representatives is because of the population. The more people in the US, the more Representatives. Each representative will serve a 2 year term, but each Senator will serve 6 year terms. And they don\'t have term limits, meaning that they can serve <b>forever</b>, as long as they\'re voted into power.'
+			},100)
+		</script>
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+		<!-- Wrapper -->
+			<div id="wrapper" class="fade-in">
+				<!-- Intro -->
+					<div id="intro">
+						<h1>The Branches<br />
+						of Government</h1>
+						<p>The three branches of government, in a website by Neil, Nathan, and Eli.<br/>
+						We'll share everything there is to know about the three branches of government</p>
+						<ul class="actions">
+							<li><a href="#header" class="button icon solid solo fa-arrow-down scrolly">Continue</a></li>
+						</ul>
+					</div>
+				<!-- Header -->
+					<header id="header">
+						<a class="logo" id="logomaintext">Legislative</a>
+					</header>
+				<!-- Nav -->
+					<nav id="nav">
+						<ul class="links">
+							<li id="legislativebranchbutton" class="active"><a onclick="legislative()">Legislative Branch</a></li>
+							<li id="executivebranchbutton"><a onclick="executive()">Executive Branch</a></li>
+							<li id="judicialbranchbutton"><a onclick="judicial()">Judicial Branch</a></li>
+						</ul>
+					</nav>
+				<!-- Main -->
+					<div id="main">
+						<!-- Featured Post -->
+							<article class="post featured">
+								<header class="major">
+									<h2 id="mainposttitle">Legislative Branch</h2><br>
+									<p id="mainposttextcontent"></p>
+								</header>
+							</article>
+					</div>
+				<!-- Copyright -->
+					<div id="copyright">
+						<ul><li>Neil, Nathan, Eli</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li></ul>
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
