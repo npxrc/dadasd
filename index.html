@@ -27,7 +27,7 @@
 				document.getElementById('executivebranchbutton').classList.add('active')
 				document.getElementById('logomaintext').innerHTML = 'Executive'
 				document.getElementById('mainposttitle').innerHTML = 'Executive Branch'
-				document.getElementById('mainposttextcontent').innerHTML = '<h3>What is it?</h3>The Executive branch is responsible for enforcing passed bills and laws. The Executive branch is made up of the President, the Vice President, and the President\'s Cabinet. <h3>How Do I Become President?</h3>In order to become the President, you must be a born Citizen of the United States, <b>at <i>least</i> 35 years old</b>, and must have been a resident of the United States for 14 years. Presidents can serve for 4 year terms, and with a limit of 2 terms.<h3>What is the Cabinet?</h3>The Cabinet is a group of people selected by the President to advise the President in many subjects.'
+				document.getElementById('mainposttextcontent').innerHTML = '<h3>What is it?</h3>The Executive branch is responsible for enforcing passed bills and laws. The Executive branch is made up of the President, the Vice President, and the President\'s Cabinet. <h3>How Do I Become President?</h3>In order to become the President, you must be a born Citizen of the United States, <b>at <i>least</i> 35 years old</b>, and must have been a resident of the United States for 14 years. Presidents can serve for 4 year terms, and with a limit of 2 terms.<h4>Impeachment</h4>A president may be impeached, or kicked from office, if someone holds an investigation against <code>public misconduct</code><h3>What is the Cabinet?</h3>The Cabinet is a group of people selected by the President to advise the President in many subjects.'
 				document.title = 'Executive Branch'
 				localStorage.setItem('page','executive')
 			}
@@ -36,7 +36,7 @@
 				document.getElementById('judicialbranchbutton').classList.add('active')
 				document.getElementById('logomaintext').innerHTML = 'Judicial'
 				document.getElementById('mainposttitle').innerHTML = 'Judicial Branch'
-				document.getElementById('mainposttextcontent').innerHTML = '<h3>What is it?</h3>The Judicial Branch is responsible for interpreting the laws, and running national courts. This branch also includes Supreme Court Justices.<h3>What are the Supreme Court Justices?</h3>The Supreme Court is made up of 9 Justices, who make decisions based on court cases, and the Constitution.'
+				document.getElementById('mainposttextcontent').innerHTML = '<h3>What is it?</h3>The Judicial Branch is responsible for interpreting the laws, and running national courts. This branch also includes Supreme Court Justices.<h3>What are Supreme Court Justices?</h3>The Supreme Court is made up of 9 Justices, who make decisions based on court cases, and the Constitution. These people are appointed by the President and serve for life, or until they wish to retire.'
 				document.title = 'Judicial Branch'
 				localStorage.setItem('page','judicial')
 			}
@@ -61,8 +61,7 @@
 				}
 			}
 			setTimeout(()=>{
-				document.title = 'Legislative Branch'
-				if (localStorage){
+				if (localStorage.getItem('page')=='legislative'||localStorage.getItem('page')=='executive'||localStorage.getItem('page')=='judicial'){
 					let lstor = localStorage.getItem('page')
 					if (lstor='legislative'){legislative()}
 					else if (lstor='executive'){executive()}
